@@ -1,5 +1,5 @@
-<div class="col-7 bg-dark align-middle">
-    <p class="small text-white text-center mt-2 mb-2">
+<div class="col-6 align-middle mt-2">
+    <p class="small text-dark text-center">
         Footer @ Curso Platzi
     </p>
 </div>

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="col-sm-7">
+    <div class="col-sm-9">
 
-        <div class="card border-0 shadow mt-4">
+        <div class="card border-0 shadow">
             <div class="card-body">
                 <form action="{{ route('users.store') }}" method="post" class="row gy-2 gx-3 align-items-center" autocomplete="off">
                     <div class="col-auto">
