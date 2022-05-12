@@ -11,6 +11,10 @@
 |
 */
 
+use App\Post;
+
+use function PHPUnit\Framework\callback;
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
@@ -20,4 +24,6 @@ Route::get('users', 'UserController@index')->name('users.index');
 Route::post('users', 'UserController@store')->name('users.store');
 Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
 
-
+Route::view('posts', 'posts', [
+    'posts' => Post::where('id', '<=', 10)->get()
+])->name('posts');
