@@ -39,6 +39,7 @@
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Email</th>
+                    <th>Posts</th>
                     <th></th>
                 </tr>
             </thead>
@@ -48,6 +49,7 @@
                     <td scope="row">{{ $loop->index + 1 }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
+                    <td>{{ $user->posts->count() }}</td>
                     <td>
                         <form action="{{ route('users.destroy', $user) }}" method="post">
                             @method('DELETE')
