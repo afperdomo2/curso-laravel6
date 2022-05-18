@@ -33,8 +33,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
-                        <a class="nav-link" href="{{ route('posts') }}">{{ __('Posts') }}</a>
+                        @guest
+                            @if (Route::has('login')) @endif
+                            @else
+                                <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
