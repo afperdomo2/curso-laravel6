@@ -47,7 +47,7 @@
                 @foreach ($users as $user)
                 <tr class="align-middle">
                     <td scope="row">{{ $loop->index + 1 }}</td>
-                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->get_name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->posts->count() }}</td>
                     <td>

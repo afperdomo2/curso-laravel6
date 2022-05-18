@@ -10,7 +10,7 @@
                     {{ $post->title }}
                 </div>
                 <div class="card-footer pt-1 pb-1">
-                    🤖 {{ $post->user->name }}
+                    🤖 {{ $post->user->get_name }}
                 </div>
             </div>
         @endforeach
