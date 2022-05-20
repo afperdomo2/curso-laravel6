@@ -36,6 +36,7 @@
                         @guest
                             @if (Route::has('login')) @endif
                             @else
+                                <a class="nav-link" href="{{ route('posts.index') }}">{{ __('Artículos') }}</a>
                                 <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
                         @endguest
                     </ul>

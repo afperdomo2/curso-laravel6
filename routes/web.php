@@ -19,11 +19,15 @@ Auth::routes();
 
 Route::get('/', 'PageController@posts');
 Route::get('/home', 'PageController@posts');
-Route::get('/blog/{post}', 'PageController@post')->name('post');
+Route::get('/blog/{post}', 'PageController@post')->name('blog');
 
 Route::get('users', 'UserController@index')->name('users.index');
 Route::post('users', 'UserController@store')->name('users.store');
 Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
+
+Route::resource('posts', 'Backend\PostController')
+    ->middleware('auth')
+    ->except('show');
 
 Route::get('collections', function () {
     $users = User::all();
