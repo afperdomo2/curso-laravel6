@@ -3,7 +3,8 @@
 @section('content')
     <div class="col-sm-9">
 
-        <div class="card mb-4">
+        <a href="{{ url()->previous() }}" class="btn btn-sm btn-info">🔙 Volver</a>
+        <div class="card mt-1 mb-4">
             <div class="card-body">
                 <h5 class="card-title">{{ $post->title }}</h5>
                 <p class="card-text">
