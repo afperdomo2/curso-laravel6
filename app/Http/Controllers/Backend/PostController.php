@@ -42,8 +42,8 @@ class PostController extends Controller
             'user_id' => auth()->user()->id
         ] + $request->all());
 
-        if ($request->file('file')) {
-            $post->image = $request->file('file')->store('posts', 'public');
+        if ($request->file('image')) {
+            $post->image = $request->file('image')->store('posts', 'public');
         }
 
         $post->save();
@@ -70,11 +70,18 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-        $post->update($request->all());
+        $post->update([
+            'title'  => $request->title,
+            'body'   => $request->body,
+            'iframe' => $request->iframe
+        ]);
 
-        if ($request->file('file')) {
+        if ($request->file('image')) {
+            $request->validate([
+                'image' => 'image'
+            ]);
             Storage::disk('public')->delete($post->image);
-            $post->image = $request->file('file')->store('posts', 'public');
+            $post->image = $request->file('image')->store('posts', 'public');
         }
 
         $post->save();

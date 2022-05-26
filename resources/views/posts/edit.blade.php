@@ -37,7 +37,11 @@
                     </div>
                     <div class="form-group">
                         <label>Imagen</label>
-                        <input type="file" name="image">
+                        <input type="file" name="image" accept="image/*">
+                        @if ($post->image)
+                            <br>
+                            <small class="text-success">🖼️ {{ $post->image }}</small>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label>Contenido *</label>
